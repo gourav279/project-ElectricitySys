@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1300.0" stylesheets="@stylesheet/StyleSheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="electricitysystem.ElectricityFXMLController">
+    <children>
+      <Pane layoutX="713.0" layoutY="39.0" prefHeight="213.0" prefWidth="192.0" style="-fx-background-color: #2eb890; -fx-background-radius: 250;" />
+      <Pane layoutX="-59.0" layoutY="-70.0" prefHeight="213.0" prefWidth="192.0" rotate="32.5" style="-fx-background-color: #2eb890; -fx-background-radius: 50;" />
+        <AnchorPane fx:id="loginpane" layoutX="162.0" layoutY="97.0" prefHeight="516.0" prefWidth="966.0" style="-fx-background-color: white;">
+            <children>
+                <Pane layoutX="-2.0" prefHeight="518.0" prefWidth="336.0" style="-fx-background-color: #2bae66ff;">
+                    <children>
+                        <Pane layoutX="-13.0" layoutY="399.0" prefHeight="106.0" prefWidth="133.0" rotate="90.0" style="-fx-background-radius: 200 0 0 0; -fx-background-color: #2eb890;" />
+                        <Pane prefHeight="63.0" prefWidth="63.0" rotate="179.8" style="-fx-background-radius: 200 0 0 0; -fx-background-color: #2eb890;" />
+                        <Text fill="WHITE" layoutX="58.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome Back!">
+                            <font>
+                                <Font name="System Bold" size="30.0" />
+                            </font>
+                        </Text>
+                        <Text fill="WHITE" layoutX="65.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="To keep Connection with us">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Text>
+                        <Button layoutX="123.0" layoutY="289.0" mnemonicParsing="false" onAction="#signinbtn" prefHeight="40.0" prefWidth="82.0" style="-fx-border-color: #2eb890; -fx-border-width: 5; -fx-border-radius: 10;" text="Sign In" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </Pane>
+                <ComboBox fx:id="logincombo" layoutX="667.0" layoutY="111.0" onMouseClicked="#logincomboaction" prefHeight="39.0" prefWidth="216.0" promptText="Login As:" style="-fx-background-color: #f0f6f7ff;" />
+                <Text fill="#2eb890" layoutX="485.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign in to Department">
+                    <font>
+                        <Font name="System Bold" size="30.0" />
+                    </font>
+                </Text>
+                <TextField fx:id="loginuser" layoutX="472.0" layoutY="203.0" prefHeight="47.0" prefWidth="313.0" promptText="Enter the email" style="-fx-background-color: #f0f6f7ff; -fx-border-color: #2bae66ff; -fx-border-width: 0 0 5 0;" />
+                <PasswordField fx:id="loginpass" layoutX="472.0" layoutY="295.0" prefHeight="47.0" prefWidth="313.0" promptText="Enter the password" style="-fx-background-color: #f0f6f7ff; -fx-border-color: #2bae66ff; -fx-border-width: 0 0 5 0;" />
+                <Button layoutX="581.0" layoutY="388.0" mnemonicParsing="false" onAction="#login2btn" prefHeight="32.0" prefWidth="67.0" text="Login" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Button>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="signuppane" layoutX="162.0" layoutY="97.0" prefHeight="516.0" prefWidth="966.0" style="-fx-background-color: white;" visible="false">
+            <children>
+                <Pane layoutX="-2.0" prefHeight="518.0" prefWidth="336.0" style="-fx-background-color: #2bae66ff;">
+                    <children>
+                        <Pane layoutX="-13.0" layoutY="399.0" prefHeight="106.0" prefWidth="133.0" rotate="90.0" style="-fx-background-radius: 200 0 0 0; -fx-background-color: #2eb890;" />
+                        <Pane prefHeight="63.0" prefWidth="63.0" rotate="179.8" style="-fx-background-radius: 200 0 0 0; -fx-background-color: #2eb890;" />
+                        <Text fill="WHITE" layoutX="10.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to our Team!">
+                            <font>
+                                <Font name="System Bold" size="30.0" />
+                            </font>
+                        </Text>
+                        <Text fill="WHITE" layoutX="65.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="To keep Connection with us">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Text>
+                        <Button layoutX="123.0" layoutY="289.0" mnemonicParsing="false" onAction="#signoutbtn" style="-fx-border-width: 5; -fx-border-color: #2eb890; -fx-border-radius: 10;" text="Sign out" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </Pane>
+                <ComboBox fx:id="signcombo" layoutX="729.0" layoutY="89.0" onMouseClicked="#signcomboaction" prefHeight="39.0" prefWidth="176.0" promptText="SignIn As:" style="-fx-background-color: #f0f6f7ff;" />
+                <Text fill="#2eb890" layoutX="485.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign in to Department">
+                    <font>
+                        <Font name="System Bold" size="30.0" />
+                    </font>
+                </Text>
+            <TextField fx:id="signuser" layoutX="407.0" layoutY="152.0" prefHeight="47.0" prefWidth="278.0" promptText="Enter the Name" style="-fx-background-color: #f0f6f7ff; -fx-border-color: #2bae66ff; -fx-border-width: 0 0 5 0;" />
+                <TextField fx:id="signemail" layoutX="406.0" layoutY="214.0" prefHeight="47.0" prefWidth="278.0" promptText="Enter the email" style="-fx-background-color: #f0f6f7ff; -fx-border-color: #2bae66ff; -fx-border-width: 0 0 5 0;" />
+            <TextField fx:id="signnumber" layoutX="407.0" layoutY="280.0" prefHeight="47.0" prefWidth="275.0" promptText="Enter the number" style="-fx-background-color: #f0f6f7ff; -fx-border-color: #2bae66ff; -fx-border-width: 0 0 5 0;" />
+            <TextField fx:id="signpass" layoutX="409.0" layoutY="344.0" prefHeight="47.0" prefWidth="275.0" promptText="Enter the password" style="-fx-background-color: #f0f6f7ff; -fx-border-color: #2bae66ff; -fx-border-width: 0 0 5 0;" />
+            <RadioButton fx:id="signmale" layoutX="744.0" layoutY="201.0" mnemonicParsing="false" onAction="#handleMaleBox" text="Male">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="signfemale" layoutX="745.0" layoutY="226.0" mnemonicParsing="false" onAction="#handleFemaleBox" text="Female">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </RadioButton>
+            <TextArea fx:id="signaddress" layoutX="713.0" layoutY="283.0" prefHeight="100.0" prefWidth="228.0" promptText="Enter the Address" style="-fx-background-color: #f0f6f7ff; -fx-border-color: #2bae66ff; -fx-border-width: 0 0 5 0;" wrapText="true" />
+                <Button layoutX="585.0" layoutY="402.0" mnemonicParsing="false" onAction="#signup2btn" prefHeight="32.0" prefWidth="85.0" style="-fx-background-color: #2bae66ff;" text="Sign Up" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Button>
+            <Text layoutX="718.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Text>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

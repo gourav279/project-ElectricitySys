@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1300.0" stylesheets="@stylesheet/StyleSheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="electricitysystem.ElectricityFXMLController">
+   <children>
+        <AnchorPane layoutX="100.0" layoutY="114.0" prefHeight="700.0" prefWidth="306.0" style="-fx-background-color: #2bae66ff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <VBox layoutY="270.0" prefHeight="428.0" prefWidth="306.0">
+                    <children>
+                        <Button mnemonicParsing="false" prefHeight="67.0" prefWidth="306.0" style="-fx-background-radius: 50 0 0 50;" text="Profile" textFill="WHITE">
+                            <VBox.margin>
+                                <Insets top="10.0" />
+                            </VBox.margin>
+                            <font>
+                                <Font name="System Bold" size="24.0" />
+                            </font>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="67.0" prefWidth="306.0" style="-fx-background-radius: 50 0 0 50;" text="LogOut" textFill="WHITE">
+                            <VBox.margin>
+                                <Insets top="10.0" />
+                            </VBox.margin>
+                            <font>
+                                <Font name="System Bold" size="24.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </VBox>
+            </children>
+        </AnchorPane>
+        <Pane layoutX="394.0" layoutY="72.0" prefHeight="206.0" prefWidth="222.0" styleClass="pane">
+            <children>
+                <Button layoutX="47.0" layoutY="148.0" mnemonicParsing="false" onAction="#customerlistbtn" prefHeight="34.0" prefWidth="129.0" text="Customer list" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </Button>
+            </children>
+        </Pane>
+        <Pane layoutX="670.0" layoutY="74.0" prefHeight="206.0" prefWidth="222.0" styleClass="pane">
+            <children>
+                <Button layoutX="46.0" layoutY="147.0" mnemonicParsing="false" onAction="#servicebtn" prefHeight="34.0" prefWidth="129.0" text="Service" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </Button>
+            </children>
+        </Pane>
+        <Pane layoutX="956.0" layoutY="76.0" prefHeight="206.0" prefWidth="222.0" styleClass="pane">
+            <children>
+                <Button layoutX="37.0" layoutY="146.0" mnemonicParsing="false" onAction="#transctionhistorybtn" prefHeight="34.0" prefWidth="153.0" text="Transction History" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </Button>
+            </children>
+        </Pane>
+        <Pane layoutX="394.0" layoutY="344.0" prefHeight="206.0" prefWidth="222.0" styleClass="pane">
+            <children>
+                <Button layoutX="47.0" layoutY="148.0" mnemonicParsing="false" onAction="#recordbtn" prefHeight="34.0" prefWidth="129.0" text="Record" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </Button>
+            </children>
+        </Pane>
+        <Pane layoutX="679.0" layoutY="346.0" prefHeight="206.0" prefWidth="222.0" styleClass="pane">
+            <children>
+                <Button layoutX="42.0" layoutY="149.0" mnemonicParsing="false" onAction="#complainbtn" prefHeight="34.0" prefWidth="129.0" text="Complain" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </Button>
+            </children>
+        </Pane>
+        <Pane layoutX="961.0" layoutY="348.0" prefHeight="206.0" prefWidth="222.0" styleClass="pane">
+            <children>
+                <Button layoutX="45.0" layoutY="148.0" mnemonicParsing="false" onAction="#aboutbtn" prefHeight="34.0" prefWidth="129.0" text="About Us" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </Button>
+            </children>
+        </Pane>
+        <AnchorPane fx:id="customerpane" layoutX="304.0" prefHeight="700.0" prefWidth="994.0" style="-fx-background-color: #f0f6f7ff;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <TableView fx:id="customerlist" layoutX="66.0" layoutY="131.0" prefHeight="530.0" prefWidth="848.0">
+                    <columns>
+                        <TableColumn fx:id="cname" prefWidth="137.0" text="Name" />
+                        <TableColumn fx:id="cnumber" prefWidth="145.0" text="Number" />
+                        <TableColumn fx:id="caddress" prefWidth="279.0" text="Address" />
+                        <TableColumn fx:id="cmeterno" prefWidth="143.0" text="Meter No." />
+                        <TableColumn fx:id="caction" prefWidth="143.0" text="Action" />
+                    </columns>
+                </TableView>
+                <TextField fx:id="cfiterlist" layoutX="266.0" layoutY="81.0" promptText="search the user" />
+                <AnchorPane fx:id="caddpane" layoutX="448.0" layoutY="124.0" prefHeight="412.0" prefWidth="668.0" style="-fx-background-color: white;" visible="false" AnchorPane.rightAnchor="184.0">
+                    <children>
+                        <AnchorPane prefHeight="412.0" prefWidth="97.0" style="-fx-background-color: #2bae66ff;" />
+                        <AnchorPane layoutX="569.0" prefHeight="412.0" prefWidth="99.0" style="-fx-background-color: #2bae66ff;" />
+                        <Text layoutX="239.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Customer">
+                            <font>
+                                <Font name="System Bold" size="30.0" />
+                            </font>
+                        </Text>
+                        <Pane layoutX="139.0" layoutY="78.0" prefHeight="312.0" prefWidth="388.0" style="-fx-background-color: #f0f6f7ff; -fx-background-radius: 50;">
+                            <children>
+                                <Text layoutX="69.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                </Text>
+                                <Text layoutX="58.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number:">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                </Text>
+                                <Text layoutX="46.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Meter No.:">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                </Text>
+                                <Text layoutX="59.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address:">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                </Text>
+                                <TextField fx:id="caddname" layoutX="152.0" layoutY="21.0" />
+                                <TextField fx:id="caddnumber" layoutX="153.0" layoutY="60.0" />
+                                <TextField fx:id="caddmeter" layoutX="154.0" layoutY="101.0" />
+                                <TextField fx:id="caddemail" layoutX="155.0" layoutY="141.0" />
+                                <TextArea fx:id="caddaddress" layoutX="152.0" layoutY="184.0" prefHeight="68.0" prefWidth="217.0" wrapText="true" />
+                                <Text layoutX="77.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                </Text>
+                                
+                            </children>
+                        </Pane>
+                        <Button fx:id="caddback" layoutX="128.0" layoutY="17.0" mnemonicParsing="false" text="Back" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="15.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="caddsubmit" layoutX="278.0" layoutY="345.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0" text="Submit" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="15.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </AnchorPane>
+                <AnchorPane fx:id="ceditpane" layoutX="448.0" layoutY="124.0" prefHeight="412.0" prefWidth="668.0" style="-fx-background-color: white;" visible="false" AnchorPane.rightAnchor="184.0">
+                    <children>
+                        <AnchorPane prefHeight="412.0" prefWidth="97.0" style="-fx-background-color: #2bae66ff;" />
+                        <AnchorPane layoutX="569.0" prefHeight="412.0" prefWidth="99.0" style="-fx-background-color: #2bae66ff;" />
+                        <Text layoutX="239.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit Customer">
+                            <font>
+                                <Font name="System Bold" size="30.0" />
+                            </font>
+                        </Text>
+                        <Pane layoutX="139.0" layoutY="78.0" prefHeight="312.0" prefWidth="388.0" style="-fx-background-color: #f0f6f7ff; -fx-background-radius: 50;">
+                            <children>
+                                <Text layoutX="69.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                </Text>
+                                <Text layoutX="58.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number:">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                </Text>
+                                <Text layoutX="46.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Meter No.:">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                </Text>
+                                <Text layoutX="59.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address:">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                </Text>
+                                <TextField fx:id="ceditname" layoutX="152.0" layoutY="21.0" />
+                                <TextField fx:id="ceditnumber" layoutX="153.0" layoutY="60.0" />
+                                <TextField fx:id="ceditmeter" layoutX="154.0" layoutY="101.0" />
+                                <TextField fx:id="ceditemail" layoutX="155.0" layoutY="141.0" />
+                                <TextArea fx:id="ceditaddress" layoutX="152.0" layoutY="184.0" prefHeight="68.0" prefWidth="217.0" wrapText="true" />
+                                <Text layoutX="77.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                </Text>
+                            </children>
+                        </Pane>
+                        <Button fx:id="ceditback" layoutX="128.0" layoutY="17.0" mnemonicParsing="false" text="Back" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="15.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="ceditsubmit" layoutX="278.0" layoutY="345.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0" text="Submit" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="15.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </AnchorPane>
+                <Text fx:id="filtercustdata" layoutX="303.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer List View">
+                    <font>
+                        <Font name="System Bold" size="30.0" />
+                    </font>
+                </Text>
+                <Button fx:id="cadd" layoutX="858.0" layoutY="82.0" mnemonicParsing="false" text="Add" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </Button>
+                <Button fx:id="cback" layoutX="77.0" layoutY="82.0" mnemonicParsing="false" text="Back" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </Button>
+            </children>
+        </AnchorPane>
+        
+        <AnchorPane fx:id="transctionpane" layoutX="304.0" prefHeight="700.0" prefWidth="994.0" style="-fx-background-color: #f0f6f7ff;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <TableView fx:id="transctionlist" layoutX="66.0" layoutY="131.0" prefHeight="530.0" prefWidth="848.0">
+                    <columns>
+                        <TableColumn fx:id="tname" prefWidth="137.0" text="Name" />
+                        <TableColumn fx:id="tnumber" prefWidth="145.0" text="Number" />
+                        <TableColumn prefWidth="213.0" text="Trasction id" />
+                        <TableColumn fx:id="tamount" prefWidth="209.0" text="Amount" />
+                        <TableColumn fx:id="tpaidmode" prefWidth="143.0" text="Paid Mode" />
+                    </columns>
+                </TableView>
+                <TextField fx:id="tfilter" layoutX="391.0" layoutY="86.0" promptText="search the user" />
+                
+                <Text layoutX="316.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Transction List View">
+                    <font>
+                        <Font name="System Bold" size="30.0" />
+                    </font>
+                </Text>
+                <Button fx:id="tback" layoutX="74.0" layoutY="68.0" mnemonicParsing="false" text="Back" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </Button>
+                
+            </children>
+        </AnchorPane>
+        
+        <AnchorPane fx:id="recordpane" layoutX="304.0" prefHeight="700.0" prefWidth="994.0" style="-fx-background-color: #f0f6f7ff;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Button fx:id="rback" layoutX="74.0" layoutY="68.0" mnemonicParsing="false" text="Back" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </Button>
+                <TableView fx:id="recordlist" layoutX="66.0" layoutY="131.0" prefHeight="530.0" prefWidth="848.0">
+                    <columns>
+                        <TableColumn fx:id="rname" prefWidth="137.0" text="Name" />
+                        <TableColumn fx:id="rnumber" prefWidth="145.0" text="Number" />
+                        <TableColumn fx:id="rtotalunit" prefWidth="149.0" text="Total Unit" />
+                        <TableColumn fx:id="rlastunit" prefWidth="117.0" text="Last Unit" />
+                        <TableColumn fx:id="rpendingamount" prefWidth="143.0" text="Pending Amount" />
+                        <TableColumn fx:id="rreminder" prefWidth="156.0" text="Reminder" />
+                    </columns>
+                </TableView>
+                <TextField fx:id="rfilter" layoutX="391.0" layoutY="86.0" promptText="search the user" />
+                
+                <Text layoutX="316.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Record List View">
+                    <font>
+                        <Font name="System Bold" size="30.0" />
+                    </font>
+                </Text>
+                
+            </children>
+        </AnchorPane>
+        
+        <AnchorPane fx:id="compane" layoutX="304.0" prefHeight="700.0" prefWidth="994.0" style="-fx-background-color: #f0f6f7ff;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Button fx:id="comback" layoutX="80.0" layoutY="79.0" mnemonicParsing="false" text="Back" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </Button>
+                <TableView fx:id="comList" layoutX="66.0" layoutY="131.0" prefHeight="530.0" prefWidth="848.0">
+                    <columns>
+                        <TableColumn fx:id="comname" prefWidth="137.0" text="Name" />
+                        <TableColumn fx:id="comnumber" prefWidth="145.0" text="Number" />
+                        <TableColumn fx:id="comcomplainid" prefWidth="173.0" text="Compain Id" />
+                        <TableColumn fx:id="comstatus" prefWidth="201.0" text="Status" />
+                        <TableColumn fx:id="comaction" prefWidth="191.0" text="Action" />
+                    </columns>
+                </TableView>
+                <TextField fx:id="comfilter" layoutX="227.0" layoutY="86.0" promptText="search the user" />
+                <ComboBox fx:id="comcombo" layoutX="476.0" layoutY="84.0" prefWidth="150.0" promptText="List As:" style="-fx-background-color: white;" />
+                <Text layoutX="303.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Complain List View">
+                    <font>
+                        <Font name="System Bold" size="30.0" />
+                    </font>
+                </Text>
+                <Button fx:id="comadd" layoutX="858.0" layoutY="82.0" mnemonicParsing="false" text="Add" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </Button>
+            </children>
+        </AnchorPane> 
+      
+        <AnchorPane fx:id="servicepane" layoutX="305.0" prefHeight="700.0" prefWidth="994.0" style="-fx-background-color: #f0f6f7ff;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Button fx:id="sback" layoutX="832.0" layoutY="85.0" mnemonicParsing="false" text="Back" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </Button>
+                <Text layoutX="393.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Service">
+                    <font>
+                        <Font name="System Bold" size="30.0" />
+                    </font>
+                </Text>
+                <TextField fx:id="snumber" layoutX="192.0" layoutY="126.0" prefHeight="33.0" prefWidth="163.0" style="-fx-background-color: white;" />
+                <Text layoutX="79.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Moblie No.:">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Text>
+                <Button fx:id="sgobtn" layoutX="398.0" layoutY="126.0" mnemonicParsing="false" text="Go" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </Button>
+                <Text layoutX="77.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Text>
+                <Text layoutX="76.0" layoutY="247.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Meter No.:">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Text>
+                <Text layoutX="79.0" layoutY="283.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address:">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Text>
+                <Text fx:id="sname" layoutX="143.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name?" wrappingWidth="152.99999862909317">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Text>
+                <Text fx:id="smeterno" layoutX="165.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Meter No.?" wrappingWidth="152.99999862909317">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Text>
+                <Text fx:id="saddress" layoutX="149.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address?" wrappingWidth="458.3818359375">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Text>
+                <Pane layoutX="49.0" layoutY="314.0" prefHeight="350.0" prefWidth="902.0" style="-fx-background-color: white; -fx-background-radius: 50;">
+                    <children>
+                        <Text layoutX="61.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unit:">
+                            <font>
+                                <Font name="System Bold" size="24.0" />
+                            </font>
+                        </Text>
+                        <TextField fx:id="sunit" layoutX="140.0" layoutY="68.0" prefHeight="44.0" prefWidth="149.0" style="-fx-background-color: #f0f6f7ff;" />
+                        <Text layoutX="38.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mouth:">
+                            <font>
+                                <Font name="System Bold" size="24.0" />
+                            </font>
+                        </Text>
+                        <Text fx:id="smouth" layoutX="521.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount?">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Text>
+                        <Button fx:id="ssubmit" layoutX="145.0" layoutY="229.0" mnemonicParsing="false" text="Submit" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="15.0" />
+                            </font>
+                        </Button>
+                        <Line endX="-100.0" endY="268.0" layoutX="476.0" layoutY="25.0" startX="-100.0" />
+                        <Text fx:id="scouunit" layoutX="494.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount?">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Text>
+                        <Text layoutX="412.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Month:">
+                            <font>
+                                <Font name="System Bold" size="24.0" />
+                            </font>
+                        </Text>
+                        <Text fx:id="samount" layoutX="521.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount?">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Text>
+                        <Text layoutX="413.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unit:">
+                            <font>
+                                <Font name="System Bold" size="24.0" />
+                            </font>
+                        </Text>
+                        <Text layoutX="414.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount:">
+                            <font>
+                                <Font name="System Bold" size="24.0" />
+                            </font>
+                        </Text>
+                        <Button fx:id="sprint" layoutX="611.0" layoutY="214.0" mnemonicParsing="false" text="Paid &amp; Print" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="15.0" />
+                            </font>
+                        </Button>
+                  <ComboBox fx:id="smouthcombo" layoutX="141.0" layoutY="139.0" prefHeight="42.0" prefWidth="150.0" style="-fx-background-color: #f0f6f7ff;" />
+                    </children>
+                </Pane>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="profilepane" layoutX="448.0" layoutY="124.0" prefHeight="412.0" prefWidth="668.0" style="-fx-background-color: #f0f6f7ff;" visible="false" AnchorPane.rightAnchor="184.0">
+            <children>
+                <AnchorPane prefHeight="412.0" prefWidth="97.0" style="-fx-background-color: #2bae66ff;" />
+                <AnchorPane layoutX="569.0" prefHeight="412.0" prefWidth="99.0" style="-fx-background-color: #2bae66ff;" />
+                <Text layoutX="274.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Profile">
+                    <font>
+                        <Font name="System Bold" size="30.0" />
+                    </font>
+                </Text>
+                <Pane layoutX="139.0" layoutY="78.0" prefHeight="312.0" prefWidth="388.0" style="-fx-background-color: white; -fx-background-radius: 50;">
+                    <children>
+                        <Text layoutX="48.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </Text>
+                        <Text layoutX="49.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Empolyer ID:">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </Text>
+                        <Text layoutX="50.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </Text>
+                        <Text layoutX="51.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contant Number:">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </Text>
+                        <Button fx:id="emailchangebtn" layoutX="136.0" layoutY="236.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="111.0" text="Change Email" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Button>
+                        <Text fx:id="pname" layoutX="105.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="name" wrappingWidth="134.884765625">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </Text>
+                        <Text fx:id="pempolyerid" layoutX="142.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="empolyer" wrappingWidth="110.99998950958252">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </Text>
+                        <Text fx:id="pemail" layoutX="115.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="email" wrappingWidth="161.66162109375">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </Text>
+                        <Text fx:id="pnumber" layoutX="185.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="number" wrappingWidth="129.77490234375">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </Text>
+                    </children>
+                </Pane>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

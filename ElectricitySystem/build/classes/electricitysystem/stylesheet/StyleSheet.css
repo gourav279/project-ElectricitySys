@@ -1,0 +1,14 @@
+.button{
+    -fx-background-color:  #2bae66ff;
+}
+.button:hover{
+    -fx-background-color:  #2eb890;
+}
+.button:pressed{
+    -fx-background-color: #2F3B43;
+}
+.pane{
+    -fx-background-color: white;
+    -fx-background-radius: 50;
+    -fx-alignment: CENTER;
+}
